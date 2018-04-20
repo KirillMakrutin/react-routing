@@ -10,7 +10,12 @@ class Posts extends React.Component {
   };
 
   postSelectedHandler = ( id ) => {
+    // but Link is ok to use instead. Here an example of how to navigate programmatically
+   /* this.props.history.push({
+      pathname: '/' + id
+    })*/
 
+   this.props.history.push('/' + id);
   };
 
   componentDidMount()
@@ -41,13 +46,15 @@ class Posts extends React.Component {
     if ( !this.state.error )
     {
       posts = this.state.posts.map( post => {
-        return <Link key={post.id} to={'/' + post.id}>
-          <Post
-
-            title={post.title}
-            author={post.author}
-            clicked={() => this.postSelectedHandler( post.id )}/>
-        </Link>;
+        return (
+            // <Link key={post.id} to={'/' + post.id}>
+              <Post
+                  key={post.id}
+                  title={post.title}
+                  author={post.author}
+                  clicked={() => this.postSelectedHandler( post.id )}/>
+            // </Link>
+        );
       } );
     }
 

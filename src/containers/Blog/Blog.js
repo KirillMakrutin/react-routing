@@ -22,7 +22,7 @@ class Blog extends Component {
                       color: 'blue',
                       textDecoration: 'underline'
                     }}
-                    to="/" exact>Home</NavLink></li>
+                    to="/" exact>Posts</NavLink></li>
                 <li><NavLink
                     to={
                   {

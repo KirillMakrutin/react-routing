@@ -23,7 +23,7 @@ class FullPost extends Component {
     }
 
     deletePostHandler = () => {
-        axios.delete('/posts/' + this.props.id)
+        axios.delete('/posts/' + this.props.match.params.id)
             .then(response => {
                 console.log(response);
             });
@@ -31,8 +31,8 @@ class FullPost extends Component {
 
     render () {
         let post = <p style={{ textAlign: 'center' }}>Please select a Post!</p>;
-        if ( this.props.id ) {
-            post = <p style={{ textAlign: 'center' }}>Loading...!</p>;
+        if ( this.props.match.params.id ) {
+            post = <div className="loader">Loading...</div>;
         }
         if ( this.state.loadedPost ) {
             post = (
