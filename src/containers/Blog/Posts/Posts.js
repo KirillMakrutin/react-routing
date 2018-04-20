@@ -15,7 +15,7 @@ class Posts extends React.Component {
    /* this.props.history.push({
       pathname: '/' + id
     })*/
-   this.props.history.push('/posts' + id);
+   this.props.history.push('/posts/' + id);
   };
 
   componentDidMount()
