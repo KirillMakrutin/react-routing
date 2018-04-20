@@ -25,7 +25,7 @@ class Blog extends Component {
         <Route path="/new-post" exact render={() => <NewPost/>} />*/}
 
           <Route path="/" exact component={Posts} />
-
+          <Route path="/new-post" component={NewPost} />
 
         </div>
     );
