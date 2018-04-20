@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import './Blog.css';
 import Posts from "./Posts/Posts";
-import {Route,Link} from 'react-router-dom';
+import {Route,NavLink} from 'react-router-dom';
 import NewPost from "./NewPost/NewPost";
 
 class Blog extends Component {
@@ -15,14 +15,21 @@ class Blog extends Component {
           <header>
             <nav>
               <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to={
+                <li><NavLink
+                    activeClassName='my-active'
+                    activeStyle={{
+                      color: 'blue',
+                      textDecoration: 'underline'
+                    }}
+                    to="/" exact>Home</NavLink></li>
+                <li><NavLink
+                    to={
                   {
                     pathname: '/new-post',
                     hash: '#submit',
                     search: '?quick-submit=true'
                   }
-                }>New post</Link></li>
+                }>New post</NavLink></li>
               </ul>
             </nav>
           </header>
